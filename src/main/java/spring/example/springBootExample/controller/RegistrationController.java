@@ -13,7 +13,7 @@ import java.util.Map;
 
 @Controller
 public class RegistrationController {
-    // can do another way
+
     @Autowired
     private UserRepo userRepo;
 
