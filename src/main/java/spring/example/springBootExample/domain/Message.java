@@ -5,9 +5,9 @@ import javax.persistence.*;
 @Entity
 public class Message {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
-
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+    @Column(name="text", nullable=false, columnDefinition="text")
     private String text;
     private String tag;
     @ManyToOne(fetch = FetchType.EAGER)
@@ -36,11 +36,11 @@ public class Message {
         this.author = author;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
