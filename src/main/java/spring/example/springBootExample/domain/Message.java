@@ -10,15 +10,19 @@ public class Message {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
     @NotBlank(message = "Please fill the message!")
     @Length(max = 2048, message = "Message to long(more then 2kb)")
     @Column(name="text", nullable=false, columnDefinition="text")
     private String text;
+
     @Length(max = 255, message = "Message to long(more then 255)")
     private String tag;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User author;
+
     private String filename;
 
     public Message() {
