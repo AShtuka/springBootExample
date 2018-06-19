@@ -40,7 +40,7 @@ public class User implements UserDetails{
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Message> messages;
 
-   /* @ManyToMany
+    @ManyToMany
     @JoinTable(name = "user_subscriptions",
             joinColumns = { @JoinColumn(name = "channel_id")},
             inverseJoinColumns = { @JoinColumn(name = "subscriber_id")})
@@ -50,7 +50,7 @@ public class User implements UserDetails{
     @JoinTable(name = "user_subscriptions",
             joinColumns = { @JoinColumn(name = "subscriber_id")},
             inverseJoinColumns = { @JoinColumn(name = "channel_id")})
-    private Set<User> subscriptions = new HashSet<>(); */
+    private Set<User> subscriptions = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
@@ -160,7 +160,7 @@ public class User implements UserDetails{
         this.messages = messages;
     }
 
-   /* public Set<User> getSubscribers() {
+    public Set<User> getSubscribers() {
         return subscribers;
     }
 
@@ -174,5 +174,5 @@ public class User implements UserDetails{
 
     public void setSubscriptions(Set<User> subscriptions) {
         this.subscriptions = subscriptions;
-    } */
+    }
 }
